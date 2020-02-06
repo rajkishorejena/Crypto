@@ -61,7 +61,7 @@
         <!--Encryption-->
         <scene sceneID="EZk-lI-zdf">
             <objects>
-                <viewController title="Encryption" id="3DC-6q-EiS" sceneMemberID="viewController">
+                <viewController title="Encryption" id="3DC-6q-EiS" customClass="EncryptionViewController" customModule="Crypto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="alW-YI-Oba">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,7 +69,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ERi-6y-Igy">
                                 <rect key="frame" x="20" y="258.5" width="335" height="150"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="A apple" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LxF-26-WhV">
+                                    <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LxF-26-WhV">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="36.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -81,6 +81,9 @@
                                         <state key="normal" title="Submit">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="encryptedButton:" destination="3DC-6q-EiS" eventType="touchUpInside" id="pHu-2b-ILc"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LA-UW-2Bb">
                                         <rect key="frame" x="0.0" y="113.5" width="335" height="36.5"/>
@@ -115,6 +118,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="680-Vp-qge"/>
                     </view>
+                    <connections>
+                        <outlet property="encrytedTextLabel" destination="5LA-UW-2Bb" id="cY3-d7-YOI"/>
+                        <outlet property="normalTextField" destination="LxF-26-WhV" id="1cK-VD-WmU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kT5-uw-7Zo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,7 +130,7 @@
         <!--Decryption-->
         <scene sceneID="Kfi-kf-2Eu">
             <objects>
-                <viewController title="Decryption" id="9Es-Bx-ypZ" sceneMemberID="viewController">
+                <viewController title="Decryption" id="9Es-Bx-ypZ" customClass="DecryptionViewController" customModule="Crypto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="67Y-jC-RwH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,9 +138,9 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5E0-oS-wLr">
                                 <rect key="frame" x="20" y="258.5" width="335" height="150"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="A Apple" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8xA-XH-jwh">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8xA-XH-jwh">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="36.5"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -145,10 +152,13 @@
                                         <state key="normal" title="Sumbit">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="decryptedButton:" destination="9Es-Bx-ypZ" eventType="touchUpInside" id="gKj-NV-E2K"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oav-Py-4h6">
                                         <rect key="frame" x="0.0" y="113.5" width="335" height="36.5"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.82954031230000003" green="0.22418125529999999" blue="0.23679465490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -179,6 +189,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VQa-hW-73y"/>
                     </view>
+                    <connections>
+                        <outlet property="encryptedTextField" destination="8xA-XH-jwh" id="Dzi-ie-aFt"/>
+                        <outlet property="normalTextLabel" destination="Oav-Py-4h6" id="9uQ-pE-65T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edb-CT-lYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

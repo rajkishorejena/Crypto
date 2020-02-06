@@ -14,6 +14,8 @@
 		B4ABE37E23E9661800D44ABC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4ABE37C23E9661800D44ABC /* LaunchScreen.storyboard */; };
 		B4ABE38923E9661800D44ABC /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABE38823E9661800D44ABC /* CryptoTests.swift */; };
 		B4ABE39423E9661800D44ABC /* CryptoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABE39323E9661800D44ABC /* CryptoUITests.swift */; };
+		B4B2633923EC712400620AB8 /* EncryptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B2633823EC712400620AB8 /* EncryptionViewController.swift */; };
+		B4B2633B23EC714600620AB8 /* DecryptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B2633A23EC714600620AB8 /* DecryptionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		B4ABE38F23E9661800D44ABC /* CryptoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4ABE39323E9661800D44ABC /* CryptoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoUITests.swift; sourceTree = "<group>"; };
 		B4ABE39523E9661800D44ABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4B2633823EC712400620AB8 /* EncryptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionViewController.swift; sourceTree = "<group>"; };
+		B4B2633A23EC714600620AB8 /* DecryptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecryptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				B4ABE37323E9661700D44ABC /* AppDelegate.swift */,
 				B4ABE37523E9661700D44ABC /* ViewController.swift */,
+				B4B2633823EC712400620AB8 /* EncryptionViewController.swift */,
+				B4B2633A23EC714600620AB8 /* DecryptionViewController.swift */,
 				B4ABE37723E9661700D44ABC /* Main.storyboard */,
 				B4ABE37A23E9661800D44ABC /* Assets.xcassets */,
 				B4ABE37C23E9661800D44ABC /* LaunchScreen.storyboard */,
@@ -260,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4ABE37623E9661700D44ABC /* ViewController.swift in Sources */,
+				B4B2633B23EC714600620AB8 /* DecryptionViewController.swift in Sources */,
+				B4B2633923EC712400620AB8 /* EncryptionViewController.swift in Sources */,
 				B4ABE37423E9661700D44ABC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
