@@ -14,7 +14,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    @IBAction func onClickEncryptionButton(_ sender: UIButton) {
+        let EncryptionVC = storyboard?.instantiateViewController(withIdentifier: "EncryptionViewController") as! EncryptionViewController
+        navigationController?.pushViewController(EncryptionVC, animated: true)
+    }
+    @IBAction func onClickDecryptionButton(_ sender: UIButton) {
+        let DecryptionVC = storyboard?.instantiateViewController(withIdentifier: "DecryptionViewController") as! DecryptionViewController
+        navigationController?.pushViewController(DecryptionVC, animated: true)
+    }
 
 }
 

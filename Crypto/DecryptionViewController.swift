@@ -12,22 +12,17 @@ class DecryptionViewController: UIViewController {
 
     @IBOutlet weak var encryptedTextField: UITextField!
     @IBOutlet weak var normalTextLabel: UILabel!
+    @IBOutlet weak var decryptionButtion: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+            encryptedTextField.delegate = self
+           decryptionButtion.isEnabled = false
+        
     }
     
+     //  MARK: -
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func decryptedButton(_ sender: Any) {
         let encryptdText = encryptedTextField.text
         let containArray = Array(encryptdText ?? "")
@@ -42,7 +37,16 @@ class DecryptionViewController: UIViewController {
         }
         normalTextLabel.text = resultArray
     }
-        
-    }
-    
+}
 
+// MARK: -
+
+extension DecryptionViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        var finalText = textField.text! as NSString
+        finalText = finalText.replacingCharacters(in:range, with: string) as NSString
+        self.normalTextLabel.text = ""
+        decryptionButtion.isEnabled = (finalText.length != 0)
+        return true
+    }
+}

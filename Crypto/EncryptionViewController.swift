@@ -11,23 +11,16 @@ import UIKit
 class EncryptionViewController: UIViewController {
     @IBOutlet weak var normalTextField: UITextField!
     @IBOutlet weak var encrytedTextLabel: UILabel!
-    
+    @IBOutlet weak var buttonEncrypt: UIButton!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        normalTextField.delegate = self
+        buttonEncrypt.isEnabled = false
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    // MARK:-
+   
     @IBAction func encryptedButton(_ sender: Any) {
       let normalText = normalTextField.text
       let letterArray = Array(normalText!)
@@ -46,5 +39,17 @@ class EncryptionViewController: UIViewController {
          encrytedTextLabel.text = returnValue
         }
     }
-    
 
+// MARK:-
+
+extension EncryptionViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        var finalText = textField.text! as NSString
+        finalText = finalText.replacingCharacters(in: range, with: string) as NSString
+        self.encrytedTextLabel.text = ""
+        buttonEncrypt.isEnabled = (finalText.length != 0)
+        return true
+    }
+    
+    
+}
